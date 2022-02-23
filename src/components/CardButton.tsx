@@ -11,7 +11,7 @@ const CardButton = ({ onClick, children, style }: CardButtonProps) => {
   const handleClick = () => {
     setTimeout(() => {
       onClick();
-    }, 300);
+    }, 250);
   };
 
   return (
