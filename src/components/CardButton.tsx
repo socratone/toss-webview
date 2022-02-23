@@ -1,23 +1,33 @@
 import styled from '@emotion/styled';
+import ButtonBase from '@mui/material/ButtonBase';
 
 type CardButtonProps = {
-  onClick?: () => void;
+  onClick: () => void;
   children: React.ReactNode;
+  style?: React.CSSProperties;
 };
 
-const CardButton = ({ onClick, children }: CardButtonProps) => {
-  return <Container onClick={onClick}>{children}</Container>;
+const CardButton = ({ onClick, children, style }: CardButtonProps) => {
+  const handleClick = () => {
+    setTimeout(() => {
+      onClick();
+    }, 300);
+  };
+
+  return (
+    <StyldButtonBase onClick={handleClick} style={style}>
+      {children}
+    </StyldButtonBase>
+  );
 };
 
-const Container = styled.article`
+const StyldButtonBase = styled(ButtonBase)`
+  display: flex;
+  justify-content: flex-start;
   padding: 20px;
   background-color: white;
   border-radius: 17px;
   cursor: pointer;
-
-  :hover {
-    background-color: #fafafa;
-  }
 `;
 
 export default CardButton;

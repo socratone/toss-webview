@@ -26,13 +26,16 @@ const Home = () => {
         </IconContainer>
       </Header>
       <Main>
-        <CardButton onClick={() => navigate('/bank')}>
+        <CardButton
+          onClick={() => navigate('/bank')}
+          style={{ marginBottom: '12px' }}
+        >
           <TitleContainer>
             <Title>토스뱅크</Title>
             <ArrowIcon />
           </TitleContainer>
         </CardButton>
-        <Card>
+        <Card style={{ marginBottom: '12px' }}>
           <TitleContainer style={{ marginBottom: '20px' }}>
             <Title>자산</Title>
             <ArrowIcon />
@@ -71,7 +74,7 @@ const Home = () => {
             price={347112}
           />
         </Card>
-        <Card>
+        <Card style={{ marginBottom: '12px' }}>
           <TitleContainer style={{ marginBottom: '20px' }}>
             <Title>소비</Title>
           </TitleContainer>
@@ -87,6 +90,19 @@ const Home = () => {
             name="2월 25일 낼 카드값"
             price={400000}
           />
+        </Card>
+        <Card>
+          <TitleContainer style={{ marginBottom: '20px' }}>
+            <Title>기타</Title>
+          </TitleContainer>
+          <Item
+            iconColor="tomato"
+            name="오늘"
+            price={100000000}
+            sendable
+            style={{ marginBottom: '30px' }}
+          />
+          <Item iconColor="gold" name="내일" price={400000} />
         </Card>
       </Main>
     </Contaienr>
@@ -131,15 +147,10 @@ const IconContainer = styled.div`
 const Main = styled.main`
   display: flex;
   flex-direction: column;
-  > * {
-    margin-bottom: 12px;
-  }
-  > *:last-of-type {
-    margin-bottom: 0;
-  }
 `;
 
 const TitleContainer = styled.div`
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;

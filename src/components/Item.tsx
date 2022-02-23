@@ -48,7 +48,7 @@ const Name = styled.p`
 `;
 
 const Price = styled.p`
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 500;
 `;
 
